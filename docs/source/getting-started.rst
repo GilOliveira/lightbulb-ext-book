@@ -7,7 +7,7 @@ Getting Started
 Before you start
 ================
 
-* Make sure you're on the latest version of ``lightbulb-neon``.
+* Make sure you're on the latest version of ``lightbulb-ext-neon``.
 
 Basic Button Menu
 =================
@@ -16,7 +16,7 @@ This assumes ``bot`` is an instance of :obj:`lightbulb.BotApp`
 
 .. code-block:: python
 
-    import neon
+    from lightbulb.ext import neon
 
     class Menu(neon.ComponentMenu):
         @neon.button("fire", "fire_button", hikari.ButtonStyle.DANGER, emoji="\N{FIRE}")
@@ -24,14 +24,14 @@ This assumes ``bot`` is an instance of :obj:`lightbulb.BotApp`
             await self.edit_msg("\N{FIRE}")
 
     @bot.command
-    @lightbulb.command("flames", "Make a cosy fire")
-    @lightbulb.implements(lightbulb.SlashCommand)
+    @lightbulb.command("fire", "Make a cosy fire!")
+    @lightbulb.implements(lightbulb.PrefixCommand, lightbulb.SlashCommand)
     async def fire_command(ctx: lightbulb.Context) -> None:
         menu = Menu(ctx)
-        resp = await ctx.respond("Bar", components=menu.build())
+        resp = await ctx.respond("Make a cosy fire!", components=menu.build())
         await menu.run(resp)
 
-When the ``flames`` command is ran, it will produce a message with a red button, that says ``fire`` next to the 🔥 emoji.
+When the ``flames`` command is ran, it will produce a message with a red button that says ``fire`` next to the 🔥 emoji.
 
 .. note::
 
@@ -75,7 +75,7 @@ Select Menus
     @neon.option("Earth", "earth", emoji="\N{DECIDUOUS TREE}")
     @neon.select_menu("select_menu", "Pick earth or water!")
     async def select_menu_test(self, values: list) -> None:
-        await self.edit_msg(values[0])
+        await self.edit_msg(f"You chose: {values[0]}")
 
 .. note::
 

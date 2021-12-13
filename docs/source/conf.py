@@ -24,7 +24,7 @@ project = "Neon"
 copyright = "2021-present, NeonJonn"
 author = "NeonJonn"
 
-with open("../../neon/__init__.py") as fp:
+with open("../../lightbulb/ext/neon/__init__.py") as fp:
     file = fp.read()
 version = re.search(r"__version__ = \"([^\"]+)", file).group(1)
 release = version

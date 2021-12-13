@@ -38,8 +38,9 @@ import inspect
 import typing as t
 
 import hikari
-import lightbulb
 from hikari.interactions.component_interactions import ComponentInteraction
+
+import lightbulb
 
 CallbackT = t.TypeVar(
     "CallbackT", bound=t.Callable[..., t.Coroutine[t.Any, t.Any, None]]

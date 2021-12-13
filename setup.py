@@ -22,11 +22,11 @@ import types
 
 from setuptools import find_namespace_packages, setup
 
-name = "neon"
+name = "lightbulb"
 
 
 def parse_meta():
-    with open(os.path.join(name, "__init__.py")) as fp:
+    with open(os.path.join("lightbulb", "ext", "neon", "__init__.py")) as fp:
         code = fp.read()
 
     token_pattern = re.compile(
@@ -57,7 +57,7 @@ def parse_requirements_file(path):
 meta = parse_meta()
 
 setup(
-    name="lightbulb-neon",
+    name="lightbulb-ext-neon",
     version=meta.version,
     description="An add-on for Lightbulb making it easier to handle component interactions",
     long_description=long_description(),

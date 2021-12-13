@@ -8,14 +8,14 @@ Neon
 
 Neon is an add-on for `Lightbulb <https://github.com/tandemdude/hikari-lightbulb>`_ making it easier to handle component interactions
 
-Repository: `View on GitHub <https://github.com/neonjonn/lightbulb-neon>`_
+Repository: `View on GitHub <https://github.com/neonjonn/lightbulb-ext-neon>`_
 
 Docs: `View Here <https://lightbulb-neon.readthedocs.io/en/latest>`_
 
 If you need any help with this library, Lightbulb or Hikari at any point feel free to join the `Discord Server <https://discord.gg/ACpBqbAyC9>`_
 
 If you think you have found a bug or other problem with the library, or you would like to suggest a feature,
-you should submit an issue on the GitHub repository `here <https://github.com/neonjonn/lightbulb-neon/issues>`_.
+you should submit an issue on the GitHub repository `here <https://github.com/neonjonn/lightbulb-ext-neon/issues>`_.
 Before doing so you should make sure you are on the latest version of the library and check to see if an issue
 already exists for your bug or feature.
 
@@ -30,6 +30,8 @@ already exists for your bug or feature.
 **Contributors:**
 
 - `NeonJonn#1650 (creator) <https://github.com/neonjonn>`_
+- `thomm.o#8637 <https://github.com/tandemdude>`_
+- `Coler#1987 <https://github.com/Coler6gamer>`_
 
 **Index:**
 

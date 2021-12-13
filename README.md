@@ -1,11 +1,11 @@
 # Neon
 
-Neon is an add-on for [Lightbulb](https://github.com/tandemdude/hikari-lightbulb/) making it easier to handle component interactions.
+**Neon** is an add-on for [Lightbulb](https://github.com/tandemdude/hikari-lightbulb/) making it easier to handle component interactions.
 
 ## Installation
 
 ```bash
-pip install git+https://github.com/neonjonn/lightbulb-neon.git
+pip install git+https://github.com/neonjonn/lightbulb-ext-neon.git
 ```
 
 ## Documentation
@@ -15,6 +15,8 @@ pip install git+https://github.com/neonjonn/lightbulb-neon.git
 ## Usage
 
 ```python
+from lightbulb.ext import neon
+
 class Menu(neon.ComponentMenu):
     @neon.button("earth", "earth_button", hikari.ButtonStyle.SUCCESS, emoji="\N{DECIDUOUS TREE}")
     async def earth(self, button: neon.Button) -> None:
@@ -41,16 +43,17 @@ class Menu(neon.ComponentMenu):
 @lightbulb.implements(lightbulb.SlashCommand, lightbulb.PrefixCommand)
 async def neon_command(ctx: lightbulb.Context) -> None:
     menu = Menu(ctx, timeout=30)
-    resp = await ctx.respond("Bar", components=menu.build())
+    resp = await ctx.respond("Check out Neon's component builder!", components=menu.build())
     await menu.run(resp)
 ```
 
 ## Contributing
 
-If you wish to contribute to this project, please [open an issue](https://github.com/neonjonn/lightbulb-neon/issues/new) first to describe your issue or feature request. 
+If you wish to contribute to this project, please [open an issue](https://github.com/neonjonn/lightbulb-ext-neon/issues/new) first to describe your issue or feature request. 
 
 As soon as you've done that you may make a pull request, and I'll review your changes.
 
 ## Contributors
 
-* [thomm.o](https://github.com/tandemdude) - [Refactor, improve code, mypy compliance](https://github.com/neonjonn/lightbulb-neon/pull/1)
+* [thomm.o](https://github.com/tandemdude) - [Refactor, improve code, mypy compliance](https://github.com/neonjonn/lightbulb-ext-neon/pull/1)
+* [Coler6gamer](https://github.com/Coler6gamer) - [Removed blocking return statement](https://github.com/neonjonn/lightbulb-ext-neon/pull/2)

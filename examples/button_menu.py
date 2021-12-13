@@ -1,10 +1,10 @@
 import os
 
 import dotenv
-import lightbulb
 from hikari import ButtonStyle
 
-import neon
+import lightbulb
+from lightbulb.ext import neon
 
 dotenv.load_dotenv()
 
