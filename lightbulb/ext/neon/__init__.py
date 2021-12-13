@@ -30,6 +30,6 @@ __all__ = [
     "on_timeout",
 ]
 
-from neon.neon import *
+from lightbulb.ext.neon import *
 
 __version__ = "0.1.0"
