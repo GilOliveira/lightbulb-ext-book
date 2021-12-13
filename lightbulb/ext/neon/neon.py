@@ -41,7 +41,8 @@ import typing as t
 import hikari
 from hikari.interactions.component_interactions import ComponentInteraction
 
-import lightbulb
+if t.TYPE_CHECKING:
+    import lightbulb
 
 CallbackT = t.TypeVar(
     "CallbackT", bound=t.Callable[..., t.Coroutine[t.Any, t.Any, None]]
