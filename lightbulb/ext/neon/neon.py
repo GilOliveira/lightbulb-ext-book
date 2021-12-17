@@ -201,11 +201,16 @@ class ComponentMenu:
     )
 
     def __init__(
-        self, context: lightbulb.Context, timeout: float = 60, author_only: bool = True
+        self,
+        context: lightbulb.Context,
+        timeout: float = 60,
+        author_only: bool = True,
+        disable_on_one_click: bool = False,
     ) -> None:
         self.context = context
         self.timeout_length = timeout
         self.author_only = author_only
+        self.disable_on_one_click = disable_on_one_click
 
         self.buttons: t.MutableMapping[str, Button] = {}
         self.button_groups: t.MutableMapping[
@@ -303,6 +308,10 @@ class ComponentMenu:
             menu = self.select_menus[cid]
             await menu(self.inter.values)
 
+        if self.disable_on_one_click:
+            components = self.build_components(disabled=True)
+            await self.edit_msg(components=components)
+
     async def run(self, resp: lightbulb.ResponseProxy) -> None:
         """
         Run the :obj:`ComponentMenu` using the given message.
@@ -352,7 +361,7 @@ class ComponentMenu:
             for group_buttons in self.button_groups.values():
                 buttons = list(group_buttons.values())
                 chunked = [buttons[i : i + 5] for i in range(0, len(buttons), 5)]
-                
+
                 for chunk in chunked:
                     row = self.context.bot.rest.build_action_row()
                     for btn in chunk:
