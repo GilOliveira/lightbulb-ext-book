@@ -349,12 +349,15 @@ class ComponentMenu:
                 rows.append(row)
 
         if len(self.button_groups) > 0:
-            # TODO - should button groups be limited to only 5 buttons?
             for group_buttons in self.button_groups.values():
-                row = self.context.bot.rest.build_action_row()
-                for btn in group_buttons.values():
-                    btn.build_for(row, disabled)
-                rows.append(row)
+                buttons = list(group_buttons.values())
+                chunked = [buttons[i : i + 5] for i in range(0, len(buttons), 5)]
+                
+                for chunk in chunked:
+                    row = self.context.bot.rest.build_action_row()
+                    for btn in chunk:
+                        btn.build_for(row, disabled)
+                    rows.append(row)
 
         if len(self.select_menus) > 0:
             for menu in self.select_menus.values():
