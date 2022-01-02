@@ -238,7 +238,7 @@ class ComponentMenu:
 
     @property
     def ctx(self) -> lightbulb.Context:
-        """The :obj`lightbulb.Context` passed to :obj:`ComponentMenu.run`."""
+        """An alias for :obj:`ComponentMenu.context`, the :obj:`lightbulb.Context` passed to :obj:`ComponentMenu.run`."""
         return self.context
 
     def build(self) -> t.List[hikari.api.ActionRowBuilder]:
