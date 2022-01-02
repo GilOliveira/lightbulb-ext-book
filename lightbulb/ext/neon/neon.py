@@ -224,15 +224,22 @@ class ComponentMenu:
 
     @property
     def msg(self) -> hikari.Message:
+        """The :obj:`hikari.Message` that the menu is attached to."""
         if self._msg is None:
             raise RuntimeError("Attribute '_msg' was None at runtime")
         return self._msg
 
     @property
     def inter(self) -> hikari.ComponentInteraction:
+        """The latest :obj:`hikari.ComponentInteraction` returned when the menu is interacted with."""
         if self._inter is None:
             raise RuntimeError("Attribute '_inter' was None at runtime")
         return self._inter
+
+    @property
+    def ctx(self) -> lightbulb.Context:
+        """The :obj`lightbulb.Context` passed to :obj:`ComponentMenu.run`."""
+        return self.context
 
     def build(self) -> t.List[hikari.api.ActionRowBuilder]:
         """
@@ -317,7 +324,7 @@ class ComponentMenu:
         Run the :obj:`ComponentMenu` using the given message.
         """
         self._msg = resp if isinstance(resp, hikari.Message) else await resp.message()
-        
+
         while True:
             try:
                 assert self.msg is not None
