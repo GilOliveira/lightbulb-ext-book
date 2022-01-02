@@ -316,11 +316,8 @@ class ComponentMenu:
         """
         Run the :obj:`ComponentMenu` using the given message.
         """
-        if isinstance(resp, lightbulb.ResponseProxy):
-            self._msg = await resp.message()
-        else:
-            self._msg = resp
-            
+        self._msg = resp if isinstance(resp, hikari.Message) else await resp.message()
+        
         while True:
             try:
                 assert self.msg is not None
