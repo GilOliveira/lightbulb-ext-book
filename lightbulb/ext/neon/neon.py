@@ -287,7 +287,7 @@ class ComponentMenu:
 
     async def create_followup(self, *args: t.Any, **kwargs: t.Any) -> None:
         """
-        Create a followup to the interaction. This allows you to do things like send ephemeral messages.
+        Create a followup to the interaction.
 
         Anything you can pass to :obj:`hikari.api.rest.RESTClient.create_message` can be passed here.
         """
