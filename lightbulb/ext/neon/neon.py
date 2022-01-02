@@ -312,11 +312,15 @@ class ComponentMenu:
             components = self.build_components(disabled=True)
             await self.edit_msg(components=components)
 
-    async def run(self, resp: lightbulb.ResponseProxy) -> None:
+    async def run(self, resp: t.Union[hikari.Message, lightbulb.ResponseProxy]) -> None:
         """
         Run the :obj:`ComponentMenu` using the given message.
         """
-        self._msg = await resp.message()
+        if isinstance(resp, lightbulb.ResponseProxy):
+            self._msg = await resp.message()
+        else:
+            self._msg = resp
+            
         while True:
             try:
                 assert self.msg is not None
