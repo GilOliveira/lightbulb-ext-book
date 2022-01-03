@@ -289,10 +289,10 @@ class ComponentMenu:
         """
         Create a followup to the interaction.
 
-        Anything you can pass to :obj:`hikari.ComponentInteraction.create_initial_response` can be passed here.
+        Anything you can pass to :obj:`hikari.ComponentInteraction.execute` can be passed here.
         """
 
-        await self.inter.create_initial_response(*args, **kwargs)
+        await self.inter.execute(*args, **kwargs)
 
     async def process_interaction_create(
         self, event: hikari.InteractionCreateEvent
