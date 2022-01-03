@@ -292,9 +292,7 @@ class ComponentMenu:
         Anything you can pass to :obj:`hikari.ComponentInteraction.create_initial_response` can be passed here.
         """
 
-        await self.inter.create_initial_response(
-            hikari.ResponseType.MESSAGE_CREATE, *args, **kwargs
-        )
+        await self.inter.create_initial_response(*args, **kwargs)
 
     async def process_interaction_create(
         self, event: hikari.InteractionCreateEvent
