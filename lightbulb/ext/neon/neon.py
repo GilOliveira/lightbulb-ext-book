@@ -289,10 +289,12 @@ class ComponentMenu:
         """
         Create a followup to the interaction.
 
-        Anything you can pass to :obj:`hikari.api.rest.RESTClient.create_message` can be passed here.
+        Anything you can pass to :obj:`hikari.ComponentInteraction.create_initial_response` can be passed here.
         """
 
-        await self.context.bot.rest.create_message(*args, **kwargs)
+        await self.inter.create_initial_response(
+            hikari.ResponseType.MESSAGE_CREATE, *args, **kwargs
+        )
 
     async def process_interaction_create(
         self, event: hikari.InteractionCreateEvent
