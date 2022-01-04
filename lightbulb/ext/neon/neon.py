@@ -290,6 +290,8 @@ class ComponentMenu:
         Create a followup to the interaction.
 
         Anything you can pass to :obj:`hikari.ComponentInteraction.execute` can be passed here.
+
+        You do need to create an inital response to the interaction before calling this method.
         """
 
         await self.inter.execute(*args, **kwargs)
