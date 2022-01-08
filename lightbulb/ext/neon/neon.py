@@ -285,6 +285,17 @@ class ComponentMenu:
         else:
             await self.msg.edit(*args, **kwargs)
 
+    async def create_followup(self, *args: t.Any, **kwargs: t.Any) -> None:
+        """
+        Create a followup to the interaction.
+
+        Anything you can pass to :obj:`hikari.ComponentInteraction.execute` can be passed here.
+
+        You do need to create an inital response to the interaction before calling this method.
+        """
+
+        await self.inter.execute(*args, **kwargs)
+
     async def process_interaction_create(
         self, event: hikari.InteractionCreateEvent
     ) -> None:
