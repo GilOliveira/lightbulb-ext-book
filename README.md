@@ -1,5 +1,7 @@
 # Neon
 
+**This library is a maintained fork of [lightbulb-ext-neon](https://github.com/neonjonn/lightbulb-ext-neon) made by NeonJonn**
+
 **Neon** is an add-on for [Lightbulb](https://github.com/tandemdude/hikari-lightbulb/) making it easier to handle component interactions.
 
 ## Installation
