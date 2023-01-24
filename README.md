@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-pip install git+https://github.com/neonjonn/lightbulb-ext-neon.git
+pip install git+https://github.com/GilOliveira/lightbulb-ext-book.git
 ```
 
 ## Documentation
@@ -48,12 +48,6 @@ async def neon_command(ctx: lightbulb.Context) -> None:
     resp = await ctx.respond("Check out Neon's component builder!", components=menu.build())
     await menu.run(resp)
 ```
-
-## Contributing
-
-If you wish to contribute to this project, please [open an issue](https://github.com/neonjonn/lightbulb-ext-neon/issues/new) first to describe your issue or feature request. 
-
-As soon as you've done that you may make a pull request, and I'll review your changes.
 
 ## Contributors
 
